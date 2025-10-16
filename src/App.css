@@ -106,7 +106,7 @@ h1, h2 {
 }
 .Logo{
   width: 40%;
-  height: auto;
+  height: 50%;
 }
 @media (max-width: 600px) {
   

@@ -79,8 +79,8 @@ h1, h2 {
   margin: 30px auto;
   max-width: 1200px;
   display: grid;
-  gap: 15px; 
-  grid-template-columns: 1fr; /* Por defecto, siempre 1 columna */
+  gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .brand-list li a {
@@ -142,25 +142,6 @@ h1, h2 {
   border-bottom: 2px solid #eee;
 }
 
-/* =============================================== */
-/* --- DISEÑO RESPONSIVE --- */
-/* =============================================== */
-
-/* --- Tablets y Teléfonos en Horizontal (2 Columnas) --- */
-@media (min-width: 600px) {
-  .brand-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* --- Escritorio (Cuadrícula Automática de 3+ Columnas) --- */
-@media (min-width: 992px) {
-  .brand-list {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
-
-/* --- Estilos específicos para pantallas PEQUEÑAS --- */
 @media (max-width: 599px) {
   .app-container {
     padding: 10px; /* Reducimos el padding general en móvil */

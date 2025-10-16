@@ -17,6 +17,11 @@ body {
 
 .page-container {
   text-align: center;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1, h2 {
@@ -101,23 +106,20 @@ h1, h2 {
 }
 .Logo{
   width: 40%;
-  height: 50%;
+  height: auto;
 }
 @media (max-width: 600px) {
   
-  /* Hacemos que el contenedor principal ocupe más espacio */
   .app-container {
     padding: 10px;
   }
 
-  /* Hacemos que los botones de categoría se apilen verticalmente */
   .category-nav {
-    flex-direction: column; /* Apila los elementos */
-    gap: 15px; /* Aumenta el espacio entre ellos */
-    align-items: center; /* Centra los botones apilados */
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
   }
 
-  /* Hacemos que los botones de navegación del PDF se vean mejor */
   .pdf-nav {
     flex-direction: column;
     gap: 15px;
@@ -145,4 +147,7 @@ h1, h2 {
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 2px solid #eee;
+}
+.Logo{
+  width: 80%;
 }

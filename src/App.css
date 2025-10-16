@@ -149,3 +149,14 @@ h1, h2 {
   padding-bottom: 10px;
   border-bottom: 2px solid #eee;
 }
+
+.en-desarrollo {
+  border: 2px dashed #ffc107; /* Un borde punteado para llamar la atención */
+  background-color: #fffbeb; /* Un fondo amarillo pálido */
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.en-desarrollo h1 {
+  color: #d39e00;
+}

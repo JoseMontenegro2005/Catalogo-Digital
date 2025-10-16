@@ -114,6 +114,8 @@ h1, h2 {
   }
   .app-container {
     padding: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .category-nav {

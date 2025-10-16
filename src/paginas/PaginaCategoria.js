@@ -4,7 +4,15 @@ import { catalogos } from '../data';
 
 function PaginaCategoria() {
   const { nombreCategoria } = useParams();
-
+if (nombreCategoria === 'drogueria' || nombreCategoria === 'tradicional') {
+    return (
+      <div className="page-container en-desarrollo">
+        <h1>Categoría en Desarrollo</h1>
+        <p>¡Estamos trabajando en esta sección! Pronto encontrarás nuevas marcas y catálogos aquí.</p>
+        <Link to="/" className="back-link">← Volver al Inicio</Link>
+      </div>
+    );
+  }
   const marcasDeCategoria = catalogos.filter(
     (catalogo) => catalogo.categoria.includes(nombreCategoria)
   );

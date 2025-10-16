@@ -56,6 +56,7 @@ h1, h2 {
 }
 
 .brand-list {
+  list-style: none;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -106,6 +107,9 @@ h1, h2 {
 @media (min-width: 600px) {
   .Logo{
   width: 80%;
+  }
+  .brand-list {
+    grid-template-columns: 1fr 1fr;
   }
   .app-container {
     padding: 10px;

@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PaginaInicio from './paginas/PaginaInicio';
+import PaginaCategoria from './paginas/PaginaCategoria';
+import VisorPdf from './paginas/VisorPdf';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PaginaInicio />} />
+          <Route path="/categoria/:nombreCategoria" element={<PaginaCategoria />} />
+          <Route path="/catalogo/:idMarca/:nombreCategoria" element={<VisorPdf />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

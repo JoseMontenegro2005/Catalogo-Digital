@@ -109,7 +109,9 @@ h1, h2 {
   height: 50%;
 }
 @media (max-width: 600px) {
-  
+  .brand-list {
+    grid-template-columns: 1fr;
+  }
   .app-container {
     padding: 10px;
   }
@@ -126,22 +128,19 @@ h1, h2 {
     margin-bottom: 20px;
   }
 
-  /* Ajustamos el visor de PDF para que ocupe toda la pantalla */
   .pdf-document-container {
-    border: none; /* Quitamos el borde en móviles */
-    max-height: none; /* Permitimos que ocupe todo el alto necesario */
+    border: none;
+    max-height: none; 
   }
 
   h1 {
     font-size: 1.8rem;
   }
 }
-/* Contenedor para cada PDF individual (título + documento) */
 .pdf-wrapper {
-  margin-bottom: 40px; /* Espacio generoso entre cada PDF */
+  margin-bottom: 40px; 
 }
 
-/* Estilo para el título de cada catálogo */
 .pdf-title {
   color: #333;
   margin-bottom: 15px;

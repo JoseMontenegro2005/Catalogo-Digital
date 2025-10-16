@@ -1,9 +1,12 @@
+/* =============================================== */
+/* ESTILOS GENERALES Y BASE                        */
+/* =============================================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #f4f7f6;
   color: #333;
   margin: 0;
-  padding: 20px;
+  padding: 0; /* Quitamos el padding del body para un mejor control */
 }
 
 .app-container {
@@ -15,12 +18,27 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.page-container {
-  text-align: center;
-}
-
 h1, h2 {
   color: #1a535c;
+}
+
+/* =============================================== */
+/* ESTILOS PÁGINA DE INICIO                        */
+/* =============================================== */
+.page-container {
+  text-align: center;
+  min-height: 70vh; /* Contenedor más espacioso */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.Logo {
+  width: 40%; /* Tamaño para escritorio */
+  height: auto; /* IMPORTANTE: Para no deformar la imagen */
+  margin-bottom: 20px;
 }
 
 .category-nav {
@@ -28,6 +46,7 @@ h1, h2 {
   justify-content: center;
   gap: 20px;
   margin-top: 30px;
+  flex-wrap: wrap; /* Permite que los botones se reorganicen si no caben */
 }
 
 .category-link, .back-link, .pdf-nav a {
@@ -46,25 +65,27 @@ h1, h2 {
   transform: translateY(-2px);
 }
 
+/* =============================================== */
+/* ESTILOS LISTA DE MARCAS                         */
+/* =============================================== */
 .category-title {
   text-transform: capitalize;
 }
 
+/* --- Base (Móvil Primero - 1 Columna) --- */
 .brand-list {
   list-style: none;
   padding: 0;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px; 
-  max-width: 1200px; 
   margin: 30px auto;
+  max-width: 1200px;
+  display: grid;
+  gap: 15px; 
+  grid-template-columns: 1fr; /* Por defecto, siempre 1 columna */
 }
 
 .brand-list li a {
   display: block;
   padding: 15px;
-  margin-bottom: 10px;
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 5px;
@@ -78,6 +99,9 @@ h1, h2 {
   background-color: #e8f9f8;
 }
 
+/* =============================================== */
+/* ESTILOS VISOR DE PDF                            */
+/* =============================================== */
 .pdf-viewer {
   text-align: center;
 }
@@ -88,6 +112,13 @@ h1, h2 {
   align-items: center;
   max-width: 800px;
   margin: 20px auto;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Dar espacio a la barra de navegación inferior */
+.pdf-document-container + .pdf-nav {
+  margin-top: 20px;
 }
 
 .pdf-document-container {
@@ -99,50 +130,48 @@ h1, h2 {
   max-width: 100%;
   height: auto !important;
 }
-.Logo{
-  width: 40%;
-  height: 50%;
-}
-@media (max-width: 600px) {
-  
-  /* Hacemos que el contenedor principal ocupe más espacio */
-  .app-container {
-    padding: 10px;
-  }
 
-  /* Hacemos que los botones de categoría se apilen verticalmente */
-  .category-nav {
-    flex-direction: column; /* Apila los elementos */
-    gap: 15px; /* Aumenta el espacio entre ellos */
-    align-items: center; /* Centra los botones apilados */
-  }
-
-  /* Hacemos que los botones de navegación del PDF se vean mejor */
-  .pdf-nav {
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-
-  /* Ajustamos el visor de PDF para que ocupe toda la pantalla */
-  .pdf-document-container {
-    border: none; /* Quitamos el borde en móviles */
-    max-height: none; /* Permitimos que ocupe todo el alto necesario */
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-}
-/* Contenedor para cada PDF individual (título + documento) */
 .pdf-wrapper {
-  margin-bottom: 40px; /* Espacio generoso entre cada PDF */
+  margin-bottom: 40px; 
 }
 
-/* Estilo para el título de cada catálogo */
 .pdf-title {
   color: #333;
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 2px solid #eee;
+}
+
+/* =============================================== */
+/* --- DISEÑO RESPONSIVE --- */
+/* =============================================== */
+
+/* --- Tablets y Teléfonos en Horizontal (2 Columnas) --- */
+@media (min-width: 600px) {
+  .brand-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Escritorio (Cuadrícula Automática de 3+ Columnas) --- */
+@media (min-width: 992px) {
+  .brand-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* --- Estilos específicos para pantallas PEQUEÑAS --- */
+@media (max-width: 599px) {
+  .app-container {
+    padding: 10px; /* Reducimos el padding general en móvil */
+  }
+
+  .Logo {
+    width: 80%; /* Hacemos el logo MÁS GRANDE en móvil */
+  }
+  
+  .category-nav, .pdf-nav {
+    flex-direction: column; /* Apilamos los botones de navegación */
+    align-items: center;
+  }
 }

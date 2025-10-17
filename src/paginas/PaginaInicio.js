@@ -5,7 +5,7 @@ import Logo from './logo.png'
 function PaginaInicio() {
   return (
     <div className="page-container">
-      <h1>Catálogo</h1>
+      <h1>Catálogo Distrimayor Pasto S.A.S</h1>
       <img src={Logo} className='Logo'/>
       <p>Selecciona una categoría para ver las marcas asociadas.</p>
       <nav className="category-nav">

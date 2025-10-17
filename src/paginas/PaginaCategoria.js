@@ -4,7 +4,7 @@ import { catalogos } from '../data';
 
 function PaginaCategoria() {
   const { nombreCategoria } = useParams();
-if (nombreCategoria === 'drogueria' || nombreCategoria === 'tradicional') {
+if (nombreCategoria === 'drogueria') {
     return (
       <div className="page-container en-desarrollo">
         <h1>Categoría en Desarrollo</h1>
@@ -13,9 +13,9 @@ if (nombreCategoria === 'drogueria' || nombreCategoria === 'tradicional') {
       </div>
     );
   }
-  const marcasDeCategoria = catalogos.filter(
-    (catalogo) => catalogo.categoria.includes(nombreCategoria)
-  );
+  const marcasDeCategoria = catalogos
+  .filter((catalogo) => catalogo.categoria.includes(nombreCategoria))
+  .sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   return (
     <div className="page-container">

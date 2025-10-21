@@ -64,13 +64,13 @@ export const catalogos = [
     archivosPdf: [ 
     { titulo: '', url:'/Catalogo/Belleza/PREBEL.pdf'}]
   },
-  {
-    id: 11,
-    nombre: 'Intibon',
-    categoria: ['belleza'],
-    archivosPdf: [ 
-    { titulo: '', url:'/Catalogo/Belleza/INTIBON.pdf'}]
-  },
+//  {
+//    id: 11,
+//    nombre: 'Intibon',
+//    categoria: ['belleza'],
+//   archivosPdf: [ 
+//    { titulo: '', url:'/Catalogo/Belleza/INTIBON.pdf'}]
+//  },
   {
     id: 12,
     nombre: 'Pronabell',

@@ -45,7 +45,7 @@ Demuestra mi competencia en:
     ```
 2.  Navega a la carpeta del proyecto:
     ```bash
-    cd catalogo-distrimayor
+    cd Catalogo-Digital
     ```
 3.  Instala las dependencias:
     ```bash

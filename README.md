@@ -50,14 +50,10 @@ Demuestra mi competencia en:
 3.  Instala las dependencias:
     ```bash
     npm install
-    # o
-    # yarn install
     ```
 4.  Ejecuta el servidor de desarrollo:
     ```bash
-    npm run dev
-    # o
-    # yarn dev
+    npm run start
     ```
 5.  Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
 
